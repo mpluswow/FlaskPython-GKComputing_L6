@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Tracker</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #ddd;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px; /* Adjust margin as needed */
+        }
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-right: 20px; /* Adjust margin as needed */
+        }
+        .menu li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+        }
+        .menu li a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+        }
+        .menu li a:hover {
+            color: #fff;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+            text-align: left;
+        }
+        .dropdown-content a {
+            color: #ddd;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #444;
+        }
+        .menu li:hover .dropdown-content {
+            display: block;
+        }
+        .footer {
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-top: 50px;
+        }
+        .container {
+            width: 30%; /* Adjust width */
+            height: 200px; /* Adjust height */
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #444;
+        }
+        .container:not(:last-child) {
+            margin-right: 20px; /* Adjust spacing */
+        }
+        .container h2 {
+            color: #fff;
+            font-size: 20px; /* Adjust heading size */
+            margin-bottom: 10px;
+        }
+        .container p {
+            color: #ddd;
+            font-size: 14px; /* Adjust paragraph size */
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#" class="navbar-brand">Pet Tracker</a>
+    <ul class="menu">
+        <li><a href="https://kulikteam.com/">Home</a></li>
+        <li><a href="https://kulikteam.com/report_online">Report</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Account</a>
+            <div class="dropdown-content">
+                <a href="https://kulikteam.com/acp">ACP</a>
+                <a href="https://kulikteam.com/ucp">UCP</a>
+                <a href="https://kulikteam.com/create_account">Create</a>
+                <a href="https://kulikteam.com/login">Login</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="container-wrapper">
+    <div id="container1" class="container">
+        <h2>Welcome to Pet Tracker</h2>
+        <p>This is content for container 1.</p>
+    </div>
+    <div id="container2" class="container">
+        <h2>Our Mission</h2>
+        <p>This is content for container 2.</p>
+    </div>
+    <div id="container3" class="container">
+        <h2>Contact</h2>
+        <p>Contact Email: <a href="mailto:contact@modbros.uk">contact@modbros.uk</a></p>
+        <p>Admin Email: <a href="mailto:admin@modbros.uk">admin@modbros.uk</a></p>
+        <p>Website: <a href="https://modbros.uk/">modbros.uk</a></p>
+        <p>Open 24 Hours</p>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; 2024 Pet Tracker. All rights reserved.
+</div>
+
+</body>
+</html>

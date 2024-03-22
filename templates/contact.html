@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+	<script src="./data/js/autologout.js"></script>
+    <style>
+        body {
+            background-color: #222;
+            color: #ddd;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #fff;
+        }
+        p {
+            text-align: right;
+            color: #ccc;
+            margin-right: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* Chatbot popup styles */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            width: 300px;
+            z-index: 1000; /* Ensure it's above other content */
+        }
+        .chat-header {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .chat-close {
+            float: right;
+            cursor: pointer;
+        }
+        .chat-content {
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 200px;
+        }
+        #userInput {
+            width: calc(100% - 20px);
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            margin: 0 10px;
+        }
+        #sendButton {
+            width: calc(100% - 20px);
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #sendButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <button id="openChat">Open Chat</button>
+    </div>
+    <h1>Contact Us</h1>
+    <div class="contact-info">
+        <p>Contact Email: <a href="mailto:contact@modbros.uk">contact@modbros.uk</a></p>
+        <p>Admin Email: <a href="mailto:admin@modbros.uk">admin@modbros.uk</a></p>
+        <p>Website: <a href="https://modbros.uk/">modbros.uk</a></p>
+        <p>Open 24 Hours</p>
+    </div>
+    <div id="chatPopup" class="chat-popup">
+        <div class="chat-header">
+            <span class="chat-close" id="closeChat">&times;</span>
+            <h2>Chatbot</h2>
+        </div>
+        <div id="chat" class="chat-content">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <input type="text" id="userInput" placeholder="Type your message...">
+        <button id="sendButton">Send</button>
+    </div>
+    <div class="footer">
+        &copy; 2024 - All rights reserved
+    </div>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/65e3b52d9131ed19d974045e/1ho0nneec';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
