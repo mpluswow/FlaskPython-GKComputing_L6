@@ -5,15 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Panel</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
-            color: #ffffff;
-        }
 
-        .container {
+       .container {
             width: 80%;
             margin: 50px auto;
             background-color: #333333;
@@ -28,20 +21,17 @@
             margin-right: 20px;
         }
 
-        .user-info h1 {
-            margin-top: 0;
-            font-size: 24px;
-        }
-
-        .user-info p {
-            margin: 5px 0;
+        .user-details {
+            display: flex;
+            align-items: center;
         }
 
         .user-avatar {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             overflow: hidden;
+            margin-right: 20px;
         }
 
         .user-avatar img {
@@ -50,51 +40,66 @@
             object-fit: cover;
         }
 
-        .options {
+        .user-details-info {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
         }
 
-        .button {
-            background-color: #555555;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .user-details-info h1 {
+            margin-top: 0;
+            font-size: 24px;
         }
+
+        .user-details-info p {
+            margin: 5px 0;
+        }
+
+.options {
+    display: flex;
+    flex-direction: row; /* Change to row to align items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px; /* Add margin to create space between user details and button */
+}
+
+.button {
+    background-color: #555555;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; /* Display as inline-block to stay within the flow of the content */
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 20px; /* Add margin to create space between user details and button */
+}
 
         .button:hover {
             background-color: #777777;
         }
     </style>
+	<script src="../data/js/get_profile.js"></script>
 </head>
 <body>
-
+{% include 'navbar/navbar.html' %}
 <div class="container">
     <div class="user-info">
-        <div class="user-avatar">
-            <img src="https://via.placeholder.com/150" alt="User Avatar">
+        <div class="user-details">
+            <div class="user-avatar">
+                <img src="https://via.placeholder.com/150" alt="User Avatar">
+            </div>
+            <div class="user-details-info">
+                <h1 id="accountName">Loading...</h1>
+                <p id="userAge">Age: Loading...</p>
+                <p id="userTown">Location: Loading...</p>
+            </div>
         </div>
-        <h1>{{ username }}</h1>
-        <p>Age: 30</p>
-        <p>Location: New York, USA</p>
-    </div>
-    <div class="options">
-        <a href="#" class="button">Edit Profile</a>
-        <a href="#" class="button">Change Password</a>
-        <a href="#" class="button">Logout</a>
-        <a href="#" class="button">Settings</a>
-        <a href="#" class="button">Notifications</a>
-        <a href="#" class="button">Help</a>
+        <div class="options">
+		    <a href="/account/report_online" class="button">Report Online</a>
+            <a href="/account/update_profile_form" class="button">Update Profile</a>
+			
+        </div>
     </div>
 </div>
 

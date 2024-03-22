@@ -1,9 +1,11 @@
-from flask import Blueprint, render_template, send_from_directory, request, jsonify, session, redirect, url_for
+import hashlib
+import re
+from flask import Blueprint, flash, render_template, send_from_directory, request, jsonify, session, redirect, url_for
 from modules.restricted_routes import restricted_routes
-from modules.database import User, UserProfile
+from modules.database import db, User, UserProfile
 
 routes = Blueprint('routes', __name__)
-    
+
 # Route for Account Creation form
 @routes.route("/join", methods=["GET"])
 def newAccount():
@@ -17,8 +19,8 @@ def create_account():
     email = request.form.get("email")
 
     # Validate input data
-    if not (username and password and email):
-        return jsonify({"error": "Missing required fields"}), 400
+    if len(username) < 4 or len(password) < 8 or not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+        return jsonify({"error": "Invalid username, password, or email format"}), 400
 
     try:
         # Check if the username or email already exists
@@ -60,7 +62,8 @@ def login():
 
         # Store the user's ID in the session to indicate they are logged in
         session['user_id'] = user.id
-        return render_template('./account/ucp.html')
+        # Redirect the user to the '/ucp' route upon successful login
+        return redirect(url_for('restricted_routes.ucp'))
 
     elif request.method == "GET":
         # Handle GET request for login page

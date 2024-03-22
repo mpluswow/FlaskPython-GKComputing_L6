@@ -2,9 +2,17 @@
 ## restricted_routes.py
 #
 from flask import Blueprint, render_template, redirect, url_for, session
-from modules.database import User
+from modules.database import User, PetReport
 
 restricted_routes = Blueprint('restricted_routes', __name__)
+
+# Route for online report
+@restricted_routes.route("/account/report_online", methods=["GET"])
+def report_online():
+    if 'user_id' not in session:
+        return redirect(url_for('routes.login'))
+
+    return render_template("pet_report.html")
 
 @restricted_routes.route('/contact')
 def contact():

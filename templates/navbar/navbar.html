@@ -4,23 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Flask App</title>
-    <link rel="stylesheet" type="text/css" href="data/navbar/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../data/navbar/css/navbar.css">
+    <style>
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/02/98/20/18/360_F_298201821_e90YxH0f6FBwOvcKhynlwF8sNYxlCMsg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+			min-height: 100vh; /* Ensure the background covers the entire viewport height */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Adjust font-family as needed */
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="data/js/get_tittle.js"></script>
+    <script src="../data/js/get_tittle.js"></script>
 </head>
 <body>
     <nav class="navbar">
-        <a class="navbar-brand" href="#">My Flask App</a>
+        <a class="navbar-brand" href="/">My Flask App</a>
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
         </ul>
     </nav>
 
     <!-- Your Flask app content goes here -->
-
+ <footer>
+        {% include 'footer/footer.html' %}
+    </footer>
 </body>
 </html>
-

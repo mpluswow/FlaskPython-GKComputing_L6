@@ -33,7 +33,6 @@ class User(db.Model):
         # Check if the provided password matches the stored hashed password
         return self.password_hash == hashlib.sha256(password.encode()).hexdigest()
 
-# User Profile Info Model
 class UserProfile(db.Model):
     __tablename__ = 'user_profiles'
     id = db.Column(db.Integer, primary_key=True)
@@ -44,9 +43,20 @@ class UserProfile(db.Model):
     town = db.Column(db.String(100))
     hobby = db.Column(db.String(100))
     bio = db.Column(db.Text)
+    email = db.Column(db.String(100))  # Add this line if email is not defined
+
 
 class PageTitle(db.Model):
     __tablename__ = 'page_titles'  # Specify the correct table name
     id = db.Column(db.Integer, primary_key=True)
     page_id = db.Column(db.Integer, unique=True, nullable=False)
     title = db.Column(db.String(255), nullable=False)
+    
+# Define a model for pet reports
+class PetReport(db.Model):
+    __tablename__ = 'pet_reports'  # Specify the table name
+    id = db.Column(db.Integer, primary_key=True)
+    latitude = db.Column(db.Float, nullable=False)
+    longitude = db.Column(db.Float, nullable=False)
+    description = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp())
