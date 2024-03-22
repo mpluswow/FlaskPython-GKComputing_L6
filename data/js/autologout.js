@@ -1,18 +1,20 @@
-var inactivityTimeout = 150000; // 2.5 minutes
-var timeoutTimer;
+var logoutTimer;
 
-function resetTimer() {
-    clearTimeout(timeoutTimer);
-    timeoutTimer = setTimeout(logout, inactivityTimeout);
-}
+    function resetLogoutTimer() {
+        clearTimeout(logoutTimer);
+        logoutTimer = setTimeout(logout, 60000); // 1 minute = 60,000 milliseconds
+    }
 
-document.addEventListener("mousemove", resetTimer);
-document.addEventListener("keypress", resetTimer);
+    function logout() {
+        // Perform logout action here, for example redirecting to logout page
+        window.location.href = "/logout";
+    }
 
-function logout() {
-    // Redirect to the logout URL
-    window.location.href = '/logout';
-}
+    // Add event listeners for user activity
+    document.addEventListener("mousemove", resetLogoutTimer);
+    document.addEventListener("keypress", resetLogoutTimer);
 
-// Start the timer on page load
-resetTimer();
+    // Initialize timer on page load
+    window.onload = function() {
+        resetLogoutTimer();
+    };
